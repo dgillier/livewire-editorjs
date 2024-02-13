@@ -88,7 +88,8 @@ class EditorJS extends Component
         );
 
         $this->dispatchBrowserEvent($eventName, [
-            'url' => Storage::disk($this->uploadDisk)->url($storedFileName),
+           /* 'url' => Storage::disk($this->uploadDisk)->url($storedFileName),*/
+            'url' => config('project.cdn') . 'blog/'.$storedFileName,
         ]);
     }
 
